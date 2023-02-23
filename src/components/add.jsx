@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Display from './display';
 
 export default function Add() {
 
@@ -14,7 +15,7 @@ export default function Add() {
   const handleClick = (event) => {
     event.preventDefault();
     setInputVal(searchTerm);
-    setInputArray([...inputArray, inputVal]);
+    setInputArray([...inputArray, searchTerm]);
     setSearchTerm('');
   };
 
@@ -23,12 +24,9 @@ export default function Add() {
       <form>
         <input type="text" placeholder='search first_name'  onChange={handleInputChange}/>
       <button onClick={handleClick}>+</button>
-      <p>{inputVal}</p>
-        {
-          inputArray.map((val, index) => (
-            <p>{val}</p>
-          ))
-        }
+      <Display usersData={inputArray}></Display>
+
+        
       </form>
   )
 }
