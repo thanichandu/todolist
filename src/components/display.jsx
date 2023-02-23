@@ -10,7 +10,7 @@ export default function Display({usersData}) {
     <ul>
       {
         usersData.map((arr) => {
-          <li>{arr}</li>
+          <p>{arr}</p>
         })
       }
     </ul>
